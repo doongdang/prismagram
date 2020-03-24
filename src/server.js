@@ -17,6 +17,8 @@ const resolvers = {
 
 const server = new GraphQLServer({ typeDefs, resolvers });
 
+server.express.use(logger("dev"));
+
 server.start({ port: PORT }, () =>
   console.log(`Server Runnig on https://localhost:${PORT}`)
 );
