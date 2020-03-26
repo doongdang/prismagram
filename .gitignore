@@ -77,7 +77,6 @@ typings/
 
 # Next.js build output
 .next
-generated
 
 # Nuxt.js build / generate output
 .nuxt
@@ -103,3 +102,7 @@ dist
 
 # TernJS port file
 .tern-port
+
+#prismagram
+generated
+prisma.yml
