@@ -4,12 +4,10 @@ import path from "path";
 import { GraphQLServer } from "graphql-yoga";
 import logger from "morgan";
 import schema from "./schema";
-import { sendSecretMail } from "./utils";
+
 dotenv.config({
   path: path.resolve(__dirname, ".env")
 });
-
-sendSecretMail("whtjrgus0428@gmail.com", "123");
 
 const PORT = process.env.PORT || 4000;
 
