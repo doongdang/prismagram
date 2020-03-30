@@ -1,6 +1,9 @@
 import {
     prisma
 } from "../../../../generated/prisma-client"
+import {
+    generateToken
+} from "../../../utils"
 
 export default {
     Mutation: {
@@ -13,6 +16,7 @@ export default {
                 email
             })
             if (user.loginSecret === secret) {
+                return generateToken(user.id)
                 //JWT
                 return "TOKEN";
             } else {

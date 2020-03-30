@@ -1,13 +1,11 @@
-require("dotenv").config();
-import dotenv from "dotenv";
-import path from "path";
-import { GraphQLServer } from "graphql-yoga";
+import "./env"
+import {
+  GraphQLServer
+} from "graphql-yoga";
 import logger from "morgan";
 import schema from "./schema";
-
-dotenv.config({
-  path: path.resolve(__dirname, ".env")
-});
+import "./passport"
+import passport from "passport"
 
 const PORT = process.env.PORT || 4000;
 
@@ -17,8 +15,8 @@ const server = new GraphQLServer({
 
 server.express.use(logger("dev"));
 
-server.start(
-  {
+
+server.start({
     port: PORT
   },
   () => console.log(`✅Server Runnig on https://localhost:${PORT}`)
