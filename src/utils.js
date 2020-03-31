@@ -1,10 +1,16 @@
 import dotenv from "dotenv";
 import path from "path";
-dotenv.config({ path: path.resolve(__dirname, ".env") });
-import { adjectives, nouns } from "./words";
+dotenv.config({
+  path: path.resolve(__dirname, ".env")
+});
+import {
+  adjectives,
+  nouns
+} from "./words";
 import nodemailer from "nodemailer";
 import mg from "nodemailer-mailgun-transport";
 import jwt from "jsonwebtoken";
+
 
 export const generateSecret = () => {
   const randomNumber = Math.floor(Math.random() * adjectives.length);
@@ -40,4 +46,6 @@ Copy paste on the app/website to log in`
   return sendMail(email);
 };
 
-export const generateToken = id => jwt.sign({ id }, process.env.JWT_SECRET);
+export const generateToken = id => jwt.sign({
+  id
+}, process.env.JWT_SECRET);
