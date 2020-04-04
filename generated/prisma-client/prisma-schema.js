@@ -872,7 +872,7 @@ type PageInfo {
 
 type Post {
   id: ID!
-  location: String!
+  location: String
   caption: String!
   user: User!
   files(where: FileWhereInput, orderBy: FileOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [File!]
@@ -888,7 +888,7 @@ type PostConnection {
 
 input PostCreateInput {
   id: ID
-  location: String!
+  location: String
   caption: String!
   user: UserCreateOneWithoutPostsInput!
   files: FileCreateManyWithoutPostInput
@@ -918,7 +918,7 @@ input PostCreateOneWithoutLikesInput {
 
 input PostCreateWithoutCommentsInput {
   id: ID
-  location: String!
+  location: String
   caption: String!
   user: UserCreateOneWithoutPostsInput!
   files: FileCreateManyWithoutPostInput
@@ -927,7 +927,7 @@ input PostCreateWithoutCommentsInput {
 
 input PostCreateWithoutFilesInput {
   id: ID
-  location: String!
+  location: String
   caption: String!
   user: UserCreateOneWithoutPostsInput!
   likes: LikeCreateManyWithoutPostInput
@@ -936,7 +936,7 @@ input PostCreateWithoutFilesInput {
 
 input PostCreateWithoutLikesInput {
   id: ID
-  location: String!
+  location: String
   caption: String!
   user: UserCreateOneWithoutPostsInput!
   files: FileCreateManyWithoutPostInput
@@ -945,7 +945,7 @@ input PostCreateWithoutLikesInput {
 
 input PostCreateWithoutUserInput {
   id: ID
-  location: String!
+  location: String
   caption: String!
   files: FileCreateManyWithoutPostInput
   likes: LikeCreateManyWithoutPostInput
@@ -968,7 +968,7 @@ enum PostOrderByInput {
 
 type PostPreviousValues {
   id: ID!
-  location: String!
+  location: String
   caption: String!
 }
 

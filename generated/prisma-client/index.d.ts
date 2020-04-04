@@ -793,7 +793,7 @@ export interface PostCreateManyWithoutUserInput {
 
 export interface PostCreateWithoutUserInput {
   id?: Maybe<ID_Input>;
-  location: String;
+  location?: Maybe<String>;
   caption: String;
   files?: Maybe<FileCreateManyWithoutPostInput>;
   likes?: Maybe<LikeCreateManyWithoutPostInput>;
@@ -879,7 +879,7 @@ export interface PostCreateOneWithoutLikesInput {
 
 export interface PostCreateWithoutLikesInput {
   id?: Maybe<ID_Input>;
-  location: String;
+  location?: Maybe<String>;
   caption: String;
   user: UserCreateOneWithoutPostsInput;
   files?: Maybe<FileCreateManyWithoutPostInput>;
@@ -926,7 +926,7 @@ export interface PostCreateOneWithoutCommentsInput {
 
 export interface PostCreateWithoutCommentsInput {
   id?: Maybe<ID_Input>;
-  location: String;
+  location?: Maybe<String>;
   caption: String;
   user: UserCreateOneWithoutPostsInput;
   files?: Maybe<FileCreateManyWithoutPostInput>;
@@ -1890,7 +1890,7 @@ export interface PostCreateOneWithoutFilesInput {
 
 export interface PostCreateWithoutFilesInput {
   id?: Maybe<ID_Input>;
-  location: String;
+  location?: Maybe<String>;
   caption: String;
   user: UserCreateOneWithoutPostsInput;
   likes?: Maybe<LikeCreateManyWithoutPostInput>;
@@ -2049,7 +2049,7 @@ export interface MessageUpdateManyMutationInput {
 
 export interface PostCreateInput {
   id?: Maybe<ID_Input>;
-  location: String;
+  location?: Maybe<String>;
   caption: String;
   user: UserCreateOneWithoutPostsInput;
   files?: Maybe<FileCreateManyWithoutPostInput>;
@@ -2425,7 +2425,7 @@ export interface UserNullablePromise
 
 export interface Post {
   id: ID_Output;
-  location: String;
+  location?: String;
   caption: String;
 }
 
@@ -3312,7 +3312,7 @@ export interface PostSubscriptionPayloadSubscription
 
 export interface PostPreviousValues {
   id: ID_Output;
-  location: String;
+  location?: String;
   caption: String;
 }
 
