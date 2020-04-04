@@ -15,8 +15,8 @@ Instragram clone with Express + Prisma + React and React Native
 - [x] Follow / Unfollow User
 - [x] See the full photo
 - [x] Edit my profile
-- [ ] Upload a photo
-- [ ] Edit the photo (Delete)
+- [x] Upload a photo
+- [x] Edit the photo (Delete)
 - [ ] See the feed
 - [ ] See Room
 - [ ] See Rooms
