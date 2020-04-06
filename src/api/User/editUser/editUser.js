@@ -14,7 +14,8 @@ export default {
                 email,
                 firstName,
                 lastName,
-                bio
+                bio,
+                avatar
             } = args
             const {
                 user
@@ -28,7 +29,8 @@ export default {
                     email,
                     firstName,
                     lastName,
-                    bio
+                    bio,
+                    avatar
                 }
             })
         }

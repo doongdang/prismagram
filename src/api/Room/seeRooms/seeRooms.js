@@ -1,6 +1,9 @@
 import {
     prisma
 } from "../../../../generated/prisma-client"
+import {
+    ROOM_FRAGMENT
+} from "../../../fragment"
 
 export default {
     Query: {
@@ -18,7 +21,7 @@ export default {
                         id: user.id
                     }
                 }
-            })
+            }).$fragment(ROOM_FRAGMENT)
         }
     }
 }
