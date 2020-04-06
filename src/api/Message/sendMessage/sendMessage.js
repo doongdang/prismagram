@@ -1,9 +1,6 @@
 import {
     prisma
-} from "../../../generated/prisma-client"
-import {
-    ROOM_FRAGMENT
-} from "../../fragment"
+} from "../../../../generated/prisma-client"
 
 export default {
     Mutation: {
@@ -31,12 +28,12 @@ export default {
                                 id: user.id
                             }]
                         }
-                    }).$fragment(ROOM_FRAGMENT)
+                    })
                 }
             } else {
                 room = await prisma.room({
                     id: roomId
-                }).$fragment(ROOM_FRAGMENT)
+                })
             }
             if (!room) {
                 throw Error("Room Not Found")

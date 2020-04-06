@@ -1,9 +1,7 @@
 import {
     prisma
 } from "../../../../generated/prisma-client"
-import {
-    ROOM_FRAGMENT
-} from "../../../fragment"
+
 
 export default {
     Query: {
@@ -26,7 +24,7 @@ export default {
             if (canSee) {
                 return await prisma.room({
                     id
-                }).$fragment(ROOM_FRAGMENT)
+                })
 
             } else {
                 throw Error("You don`t have right to see this.")
