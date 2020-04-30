@@ -3,8 +3,10 @@ const upload = multer({ dest: "uploads/" }); // muler는 옵션객체를 허용�
 
 export const uploadMiddleware = upload.single("file");
 export const uploadController = (req, res) => {
-  const { file } = req;
-  console.log(file);
-  res.end();
+  const {
+    file: { path },
+  } = req;
+  res.json({ path });
 };
 // upload.single => single()안의 field 인자에 명시된 이름의 단수파일을 전달받는다. 이파일은 req.file에 저장;
+// req 객체속 file속 path를 가져옴
