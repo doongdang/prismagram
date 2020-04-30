@@ -1,5 +1,14 @@
 import multer from "multer";
-const upload = multer({ dest: "uploads/" }); // muler는 옵션객체를 허용하는데 그중에서 dest는 파일이 저장될 위치를 알려줌
+const upload = multer({
+  storage: multer.diskStorage({
+    destination: function(req, file, cb) {
+      cb(null, "uploads/");
+    },
+    filename: function(req, file, cb) {
+      cb(null, file.originalname);
+    },
+  }),
+}); // muler는 옵션객체를 허용하는데 그중에서 dest는 파일이 저장될 위치를 알려줌
 
 export const uploadMiddleware = upload.single("file");
 export const uploadController = (req, res) => {
